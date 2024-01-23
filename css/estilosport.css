@@ -1,0 +1,121 @@
+/* EFECTO EN LAS IMAGENES ZOOM */
+zoomP {
+    /* Aumentamos la anchura y altura durante 2 segundos * */
+    transition: width 1.5s, height 1.5s, transform 1.5s;
+    -moz-transition: width 1.1s, height 1.1s, -moz-transform 1.1s;
+    -webkit-transition: width 1.2s, height 1.1s, -webkit-transform 1.1s;
+    -o-transition: width 1.1s, height 1.1s, -o-transform 1.1s;
+}
+
+.zoomP:hover {
+    /* /tranformamos el elemento al pasar el mouse por encima al doble de */
+    /* su tamano con scale(2).* */
+    transform: scale(2.05);
+    /*(150%zoom Note:if the zoom is too large,it will go outside of the viewport)*/
+    -webkit-transform: scale(1.05);
+    transform: scale(1.08)
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.masthead-subheading {
+    color: white;
+    font-size: 18px;
+    overflow: hidden;
+    border-right: 0.15em solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+
+#typed-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+
+.Technologies_carousel {
+    overflow: hidden;
+}
+
+.Technologies_carouselInner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.Technologies_carouselItem {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    /* Espaciado entre elementos, ajusta según sea necesario */
+    text-align: center;
+}
+
+
+/* nieve */
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@media (max-width: 768px) {
+    .lazo {
+        display: none;
+    }
+
+    .zoomP {
+        transition: none;
+        -moz-transition: none;
+        -webkit-transition: none;
+        -o-transition: none;
+    }
+
+}
+
+#typed-text {
+    font-size: 1em;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+}
+}
